@@ -51,6 +51,7 @@
      {"filter": "datum.people > 0"},
      {"filter": "datum.people > Population_Above"}
      ],
+    "width":"200",
     "mark": "bar",
     "encoding": {
       "x": {
