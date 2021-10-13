@@ -1,0 +1,131 @@
+[
+    {
+        "Num_chronic_conditions":"0",
+       "count":53.80,
+       "state":"NSW"
+    },
+    {"Num_chronic_conditions":"0",
+    "count":52.04,
+    "state":"Vic"
+    },
+    {"Num_chronic_conditions":"0",
+     "count":51.67,
+     "state":"Qld"
+    },
+    {"Num_chronic_conditions":"0",
+    "count":50.47,
+    "state":"SA"
+    },
+    {"Num_chronic_conditions":"0",
+    "count":54.89,
+    "state":"WA"
+    },
+    {"Num_chronic_conditions":"0",
+    "count":47.66,
+    "state":"Tas"
+    },
+    {"Num_chronic_conditions":"0",
+    "count":61.20,
+    "state":"NT"
+    },
+    {"Num_chronic_conditions":"0",
+    "count":51.3,
+    "state":"ACT"},
+
+    {"Num_chronic_conditions":"1",
+    "count":26.75,
+    "state":"NSW"
+    },
+    {"Num_chronic_conditions":"1",
+    "count":27.62,
+    "state":"Vic"
+    },
+    {"Num_chronic_conditions":"1",
+    "count":26.82,
+    "state":"Qld"
+    },
+    {"Num_chronic_conditions":"1",
+    "count":26.51,
+    "state":"SA"
+    },
+    {"Num_chronic_conditions":"1",
+    "count":27.27,
+    "state":"WA"
+    },
+    {"Num_chronic_conditions":"1",
+    "count":27.18,
+    "state":"Tas"
+    },
+    {"Num_chronic_conditions":"1",
+    "count":24.27,
+    "state":"NT"
+    },
+    {"Num_chronic_conditions":"1",
+    "count":28.37,
+    "state":"ACT"},
+
+    {"Num_chronic_conditions":"2",
+    "count":10.87,
+    "state":"NSW"
+    },
+    {"Num_chronic_conditions":"2",
+    "count":11.62,
+    "state":"Vic"
+    },
+    {"Num_chronic_conditions":"2",
+    "count":12.31,
+    "state":"Qld"
+    },
+    {"Num_chronic_conditions":"2",
+    "count":13.08,
+    "state":"SA"
+    },
+    {"Num_chronic_conditions":"2",
+    "count":10.66,
+    "state":"WA"
+    },
+    {"Num_chronic_conditions":"2",
+    "count":13.81,
+    "state":"Tas"
+    },
+    {"Num_chronic_conditions":"2",
+    "count":9.29,
+    "state":"NT"
+    },
+    {"Num_chronic_conditions":"2",
+    "count":11.56,
+    "state":"ACT"
+    },
+{"Num_chronic_conditions":"3 or more",
+"count":8.58,
+"state":"NSW"
+},
+{"Num_chronic_conditions":"3 or more",
+"count":8.72,
+"state":"Vic"
+},
+{"Num_chronic_conditions":"3 or more",
+"count":9.21,
+"state":"Qld"
+},
+{"Num_chronic_conditions":"3 or more",
+"count":9.93,
+"state":"SA"
+},
+{"Num_chronic_conditions":"3 or more",
+"count":7.27,
+"state":"WA"
+},
+{"Num_chronic_conditions":"3 or more",
+"count":11.47,
+"state":"Tas"
+},
+{"Num_chronic_conditions":"3 or more",
+"count":5.24,
+"state":"NT"
+},
+{"Num_chronic_conditions":"3 or more",
+"count":8.73,
+"state":"ACT"
+}
+]
