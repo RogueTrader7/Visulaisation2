@@ -18,6 +18,8 @@
     "width": "container",
     "height": "container",
     "hconcat": [{
+            "width": "250",
+            "height": "150",
             "mark": "area",
             "encoding": {
             "x": {
@@ -68,7 +70,8 @@
        
             
         {
-
+            "width": "250",
+            "height": "150",
             "mark": "area",
             "encoding": {
                 "x": {
