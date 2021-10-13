@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": { "text": "Deaths in Males and Females due to Ischaemic Heart disease 2010-2020", "size":"30"},
+    "title": { "text": "Deaths in Males and Females due to Ischaemic Heart disease 2010-2020", "size":"20"},
     "data": {
         "url": "https://raw.githubusercontent.com/RogueTrader7/Visulaisation2/main/concat.csv"
     },
@@ -59,11 +59,11 @@
                    "y": {
                     "field": "Year",
                    "type": "temporal",
-           "sort": {"field": "males","op":"average",                     "order":"descending"}
+           "sort": {"field": "males","op":"average","order":"descending"}
                }
            
                },
-               "mark": {"type": "text", "align": "right", "dx": 3, "size":"25"},
+               "mark": {"type": "text", "align": "right", "dx": 3, "size":"10"},
                "encoding": {"text": {"field": "text_annotation"}
            }  
            }]},
