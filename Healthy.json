@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    
+    "align": "centre",
+    "title": {"text": "Fitness by State in Australia: 2019", "fontSize": 15},
+    "projection":{"type": "equirectangular"},
+    "data":{
+        "url": "https://raw.githubusercontent.com/RogueTrader7/3179-Vis/8261970f5562a20d1d7ae8fd7ec052729a0ef97a/STE11aAust.topojson",
+          "format":{"type":"topojson", "feature": "STE11aAust"}
+    },
+
+    "transform": [
+        {
+            "lookup": "properties.STATE_NAME",
+            "from": {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/RogueTrader7/Visulaisation2/main/Physical%20summary_%20by%20region.csv"
+        },
+            "key": "State",
+            "fields": ["2019"]
+      }
+        }
+    ],
+    "mark": {
+     "type": "geoshape"
+    },
+    "encoding": {
+        "color":{
+            "field":"2019",
+            "type": "quantitative",
+            "scale": {
+                "domain":[40,50],
+                "range": [
+                    "#d73027",
+                    "#fc8d59",
+                    "#ffffbf",
+                    "#e0f3f8",
+                    "#91bfdb",
+                    "#4575b4"
+                  ]}
+            },
+            "tooltip":[{"field": "properties.STATE_NAME", "type": "nominal", "title":"State"},
+                {"field": "2019", "type": "quantitative", "title":"Percentage proportion"}]
+        }
+    }
