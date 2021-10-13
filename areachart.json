@@ -1,0 +1,112 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "title": { "text": "Deaths in Victoria and Australia due to Chapter IX ICD", "fontSize":"10"},
+    "width": 240,
+    "height": 130,
+
+  
+    "data": [
+      {
+        "name": "table",
+
+        "values": [
+             {"x": "2010", "y": 11041, "c":"Vic"},{"x": "2010", "y": 45275, "c":"Australia"}, 
+             {"x": "2011", "y": 10913, "c":"Vic"},{"x": "2011", "y": 45443, "c":"Australia"}, 
+             {"x": "2012", "y": 10699, "c":"Vic"},{"x": "2012", "y": 44595, "c":"Australia"}, 
+             {"x": "2013", "y": 10668, "c":"Vic"},{"x": "2013", "y": 43773, "c":"Australia"}, 
+             {"x": "2014", "y": 11121, "c":"Vic"},{"x": "2014", "y": 45112, "c":"Australia"}, 
+             {"x": "2015", "y": 11068, "c":"Vic"},{"x": "2015", "y": 45124, "c":"Australia"}, 
+             {"x": "2016", "y": 10841, "c":"Vic"},{"x": "2016", "y": 44156, "c":"Australia"}, 
+             {"x": "2017", "y": 11175, "c":"Vic"},{"x": "2017", "y": 44697, "c":"Australia"}, 
+             {"x": "2018", "y": 10672, "c":"Vic"},{"x": "2018", "y": 42475, "c":"Australia"}, 
+             {"x": "2019", "y": 10433, "c":"Vic"},{"x": "2019", "y": 41752, "c":"Australia"}, 
+             {"x": "2020", "y": 9506,  "c":"Vic"},{"x": "2020", "y": 38042, "c":"Australia"}
+        ],
+        
+        "transform": [
+            {
+              "type": "stack",
+              "groupby": ["x"],
+              "sort": {"field": "c"},
+              "field": "y"
+            }
+          ]
+        }
+      ],
+  
+    
+      "scales": [
+        {"name": "x",
+          "type": "point",
+          "range": "width",
+          "domain": {"data": "table", "field": "x"}
+        },
+        {"name": "y",
+          "type": "linear",
+          "range": "height",
+          "nice": true, "zero": true,
+          "domain": {"data": "table", "field": "y1"}
+        },
+        {"name": "color",
+          "type": "ordinal",
+          "range": "category",
+          "domain": {"data": "table", "field": "c"}}
+      ],
+    
+      "axes": [
+        {"orient": "bottom", "scale": "x", "zindex": 1},
+        {"orient": "left", "scale": "y", "zindex": 1}
+      ],
+
+      "marks": [
+        {"type": "group",
+          "from": {
+            "facet": {
+              "name": "series",
+              "data": "table",
+              "groupby": "c"
+            }
+          },
+        "width": "container",
+        "height": "container",
+          
+              "marks": [
+                
+          {
+            "type": "area",
+            "from": {"data": "series"},
+            "encode": {
+                  "enter": {
+                    "interpolate": {"value": "monotone"},
+                    "x": {"scale": "x", "field": "x"},
+                    "y": {"scale": "y", "field": "y0"},
+                    "y2": {"scale": "y", "field": "y1"},
+                    "fill": {"scale": "color", "field": "c"}
+                  },
+                  "update": {
+                    "fillOpacity": {"value": 1}
+                  },
+                  "hover": {
+                    "fillOpacity": {"value": 0.5}
+              }
+            }
+          }
+        ],
+        "tooltip":[{"field": "x", "type": "nominal", "title":"Year"},
+            {"field": "y", "type": "quantitative", "title":"Death toll"},
+            {"field": "c", "type": "nominal", "title":"region"}]
+    
+}
+      
+      
+]
+  }
+        
+      
+  
+                        
+  
+      
+                              
+  
+
