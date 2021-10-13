@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "description": "Death toll in NSW, Victoria and Australia due to Ischaemic heart disease",
-    "width": 120,
+    "width": 150,
     "height": 100,
 
   
