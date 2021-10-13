@@ -3,7 +3,13 @@
     }
     h1{
       font-weight: 900;
+          color: #527299;
+     }
+     h1{
+      font-weight: 900;
+          color: #527280;
     }
+     
      body{
        background-color: rgb(254,224,144);
      }
