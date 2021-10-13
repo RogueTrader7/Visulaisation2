@@ -1,6 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {"url": "Heatmap.json"},
+  "title": { "text": " Statewise proportion of chronic conditions: 2017-18", "fontSize":15 },
+  "data": {"url": "https://raw.githubusercontent.com/RogueTrader7/Visulaisation2/main/Heatmap.json"},
   "params": [
     {
         "name": "Population_Above",
