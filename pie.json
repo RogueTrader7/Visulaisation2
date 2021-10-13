@@ -65,7 +65,7 @@
           { "Death_Cause": "Diabetes mellitus", "value": 5.69 }
       ]
   },
-  "width": 600,
+  "width": 200,
   "height": 200,
   "padding":5,
   "title": "Pie chart",
