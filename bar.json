@@ -59,8 +59,8 @@
        {"filter": "condition_selection == null || datum.longterm_conditions == condition_selection"}
        ],
        
-  "width": 300,
-  "height": 150,
+  "width": 200,
+  "height": 100,
   "padding": 20,
 "data": {
   "url": "https://raw.githubusercontent.com/RogueTrader7/vis2/main/bar.csv"
