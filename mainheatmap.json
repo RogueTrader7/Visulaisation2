@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text": " Statewise proportion of chronic conditions: 2017-18", "fontSize":15 },
+  "data": {"url": "https://raw.githubusercontent.com/RogueTrader7/Visulaisation2/main/Heatmap.json"},
+  "params": [
+    {
+        "name": "Population_Above",
+        "value": 0,
+        "bind": {
+        "input": "range",
+        "min": 5,
+        "max": 55,
+        "step": 1,
+        "name": "Range of proportion: "
+      }
+    }
+],
+"transform": [
+ {"filter": "datum.count > 0"},
+ {"filter": "datum.count > 0"},
+ {"filter": "datum.count > Population_Above"}
+ ],
+  "mark": "rect",
+  "encoding": {
+    "y": {"field": "Num_chronic_conditions", "type": "ordinal"},
+    "x": {"field": "state", "type": "nominal"},
+
+    "color":{
+        "field":"count",
+        "type": "quantitative",
+        "scale": {
+            "domain":[5,55],
+        "range": [
+        "#d73027",
+        "#fc8d59",
+        "#ffffbf",
+        "#e0f3f8",
+        "#91bfdb",
+        "#4575b4"]
+  },
+"title": "Proportion people per state " 
+},
+"tooltip": [
+    {"field": "Num_chronic_conditions", "type": "ordinal"},
+    {"field": "state", "type": "nominal"},
+    {"field": "count", "type": "quantitative", "format": ","}
+    ]
+},
+"config": {
+    "axis": {"grid": true, "tickBand": "extent"}
+  }
+}
