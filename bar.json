@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": { "text": "Proportion of chronic conditions in persons 15 and above (%)- 2017-2018"},
-  "width": 100,
-  "height": 120,
+  "title": { "text": "Proportion of chronic conditions over Australia(%):2017-18"},
+  "width": 90,
+  "height": 110,
   "params": [
     {
       "name": "Population_Above",
@@ -60,7 +60,7 @@
        {"filter": "datum.Australia > Population_Above"},
        {"filter": "condition_selection == null || datum.longterm_conditions == condition_selection"},
        {
-        "calculate": "'Around ' + datum['Australia'] +' percent of Australians suffer from Diabetes mellitus'",
+        "calculate": "datum['Australia'] +'% of Australians suffer Diabetes mellitus'",
         "as": "text_annotation"
         }
        ],
