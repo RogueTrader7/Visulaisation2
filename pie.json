@@ -1,0 +1,117 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1200,
+  "height": 700,
+  "padding": {"right": 10},
+  "title": {"text": "Chronic conditions % in Victoria(2020)","fontSize":60,"color": "gray", "anchor": "start", "font":"Lato"},
+  "autosize": "fit",
+  "background": "#f3fafa",
+  "view": {"fill": "#f3fafa"},
+  "params": [
+      {
+          "name": "Population_Above",
+          "value": 0,
+          "bind": {
+          "input": "range",
+          "min": 1,
+          "max": 18,
+          "step": 0.1,
+          "name": "Range of proportion: "
+        }
+        },
+      {
+      "name": "condition_selection",
+      "bind": {
+      "input": "select",
+      "options": [
+      null,
+      "Ischaemic heart disease",
+      "Malignant neoplasms of digestive organs",
+      "Other heart disease",
+      "Cerebrovascular diseases",
+      "Mental disorders",
+      "Malignant neoplasms of respiratory organs",
+      "Chronic lower respiratory diseases",
+      "Diseases of the nervous system",
+      "Falls",
+      "Diabetes mellitus"
+      ],
+      "labels":[
+          "Show All",
+          "Ischaemic heart disease",
+          "Malignant neoplasms of digestive organs",
+          "Other heart disease",
+          "Cerebrovascular diseases",
+          "Mental disorders",
+          "Malignant neoplasms of respiratory organs",
+          "Chronic lower respiratory diseases",
+          "Diseases of the nervous system",
+          "Falls",
+          "Diabetes mellitus"
+      ],
+      "name": "condition Selection: "}
+  }],
+  "transform": [
+      {"filter": "datum.value > 0"},
+      {"filter": "datum.value > 0"},
+      {"filter": "datum.value > Population_Above"},
+      {"filter": "condition_selection == null || datum.Death_Cause == condition_selection"}
+     
+      ],
+  "data": {
+      "values": [
+          { "Death_Cause": "Ischaemic heart disease", "value": 18.44 },
+          { "Death_Cause": "Malignant neoplasms of digestive organs", "value": 16.16 },
+          { "Death_Cause": "Other heart disease", "value": 10.63 },
+          { "Death_Cause": "Cerebrovascular diseases", "value": 10.36 },
+          { "Death_Cause": "Mental disorders", "value": 9.99 },
+          { "Death_Cause": "Chronic lower respiratory diseases", "value": 7.08 },
+          { "Death_Cause": "Diseases of the nervous system", "value": 6.79 },
+          { "Death_Cause": "Falls", "value": 5.70 },
+          { "Death_Cause": "Diabetes mellitus", "value": 5.69 }
+      ]
+  },
+  "padding":5,
+  "mark": { "type": "arc" },
+  "encoding": {
+      "theta": {
+          "field": "value",
+          "type": "quantitative"
+      },
+      "color": {
+          "field": "Death_Cause",
+          "type": "nominal",
+          "title":"Death cause",
+          "scale": {
+              "domain": ["Ischaemic heart disease", "Malignant neoplasms of digestive organs", "Other heart disease", "Cerebrovascular diseases", "Mental disorders", "Malignant neoplasms of digestive organs", "Chronic lower respiratory diseases", "Diseases of the nervous system", "Falls", "Diabetes mellitus"],
+              "range": ["#a50026", "#d73027", "#f46d43", "#fdae61", "#fee090", "#e0f3f8", "#abd9e9", "#74add1", "#4575b4", "#313695"]
+          },
+          "legend":{
+              "labelLimit": 800,
+              "columns":1
+          }
+          },
+          "order": {
+           "field": "order"
+          },
+          "tooltip":[{"field": "Death_Cause", "title":"Death cause", "type": "nominal"},
+           {"field": "value", "type": "quantitative"}
+      
+      
+]
+        },
+
+        "config": {
+            "view": {"stroke": null},
+            "axisX":{ "labelFont": "Lato", "labelFontSize":30, "titleFont": "Lato", "titleFontSize":40},
+            "axisY":{ "labelFont": "Lato", "labelFontSize":30, "titleFont": "Lato", "titleFontSize":40},
+            "legend": {
+              "labelFontSize":30,
+              "titleFont": "Lato", 
+             
+              "titleFontSize":35
+    
+             
+               }
+          } 
+   }

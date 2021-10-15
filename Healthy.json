@@ -1,10 +1,12 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
-    "height": 400,
-    
+    "width": 2000,
+    "height": 700,
+    "background": "#f3fafa",
+    "view": {"fill": "#EBF7F7"},
     "align": "centre",
-    "title": {"text": "Fitness by State in Australia: 2019", "fontSize": 15},
+    "title": {"text": "Fitness by State(2019)", "anchor":"start","font": "Lato","color": "gray",  "fontSize": 60},
+    "config": {"legend": {"titleFont": "Lato"}},
     "projection":{"type": "equirectangular"},
     "data":{
         "url": "https://raw.githubusercontent.com/RogueTrader7/3179-Vis/8261970f5562a20d1d7ae8fd7ec052729a0ef97a/STE11aAust.topojson",
@@ -23,22 +25,15 @@
       }
         }
     ],
-    "mark": {
-     "type": "geoshape"
-    },
+    "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 1.8},
     "encoding": {
         "color":{
             "field":"2019",
             "type": "quantitative",
+            "sort": "ascending",
             "scale": {
                 "domain":[40,50],
-                "range": [
-                    "#d73027",
-                    "#fc8d59",
-                    "#ffffbf",
-                    "#e0f3f8",
-                    "#91bfdb",
-                    "#4575b4"
+                "range": ["#abd9e9","#4393c3","#2166ac"
                   ]}
             },
             "tooltip":[{"field": "properties.STATE_NAME", "type": "nominal", "title":"State"},

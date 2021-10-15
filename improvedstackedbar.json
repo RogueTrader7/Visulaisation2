@@ -1,0 +1,159 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {"text": "State wise health status(2017-18)", "fontSize":60, "color": "gray", "anchor": "start", "font":"Lato",
+    "dx":5},
+    "padding": {"right": 25},
+    "data": {
+      "url": "https://raw.githubusercontent.com/RogueTrader7/Homework10/main/normalisedtree.csv"
+    },
+    
+"params": [
+        {
+            "name": "Population_Above",
+            "value": 0,
+            "bind": {
+            "input": "range",
+            "min": 4,
+            "max": 35,
+            "step": 0.1,
+            "name": "Range of proportion: "
+            
+          }
+        },
+ {
+ "name": "State_selection",
+ "bind": {
+ "input": "select",
+ "options": [
+ null,
+ "NSW",
+ "Vic",
+ "Qld",
+ "SA",
+ "WA",
+ "Tas",
+ "NT",
+ "ACT"
+ ],
+ "labels":[
+ "Show All",
+ "NSW",
+ "Vic",
+ "Qld",
+ "SA",
+ "WA",
+ "Tas",
+ "NT",
+ "ACT"
+ ],
+ 
+ "name": "State Selection: "
+ }
+ }
+ ],
+ "transform": [
+     {"filter": "datum.people > 0"},
+     {"filter": "datum.people > 0"},
+     {"filter": "datum.people > Population_Above"},
+     {
+      "calculate": "'Around ' + datum['people'] + ' % of people in ' + datum['State'] +' are '+ datum['health status']+' healthwise' ",
+      "as": "text_annotation"
+      }
+     ],
+   
+    "width":"1000",
+    "height":"600",
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "State",
+        "type": "ordinal",
+        "title": "Regions"
+      },
+      "y": {
+        "aggregate": "max",
+        "field": "people"
+      },
+      "color": {
+        "type": "nominal",
+        "field": "health status",
+        "scale": {
+          "domain": [
+            "Excellent",
+            "Very good",
+            "Excellent / Very good",
+            "Good",
+            "Fair",
+            "Fair / Poor"
+          ],
+          "range": [
+            "#d73027",
+            "#ffffbf",
+            "#fc8d59",
+            
+            "#e0f3f8",
+            "#91bfdb",
+            "#4575b4"
+          ]
+        },
+        "title": "Health Status"
+      },
+      "legend":{
+        "labelLimit": 700,
+        "columns":1
+    },
+       
+      "tooltip": [
+        {"field": "State", "type": "nominal"},
+        {"field": "people", "type": "quantitative", "format": ","}
+        ]
+    },
+    "layer": [
+      {
+          "mark":{
+          "type":"bar"}
+  },
+    {"transform": [
+      {
+      "window": [{
+        "op": "rank",
+        "as": "rank"
+      }],
+      "sort": [{ "field": "people", "order": "descending" }]
+    }, {
+      "filter": "datum.rank == 37" 
+    }
+  ],
+  "encoding": {
+   "x": {
+       "field": "people",
+       "type": "quantitative"
+       
+   },
+   "y": {
+       "field": "health status",
+       "type": "nominal",
+       "sort": {"field": "people", "op": "average", "order":"descending"}
+   }
+   
+ },
+   "mark": {"type": "text", "align": "center", "dx": 3, "size":"30"},
+ "encoding": {"text": {"field": "text_annotation"}
+
+       
+      }
+  }
+],
+"config": {
+    "axisX":{ "labelFont": "Lato", "labelFontSize":30, "titleFont": "Lato", "titleFontSize":40},
+    "axisY":{ "labelFont": "Lato", "labelFontSize":30, "titleFont": "Lato", "titleFontSize":40},
+    "legend": {
+
+      "labelFontSize":30,
+     
+      "titleFontSize":30
+     
+       }
+     
+} 
+}

@@ -1,0 +1,62 @@
+{
+  font-family: 'Lato', sans-serif;
+}
+h1{
+  font-weight: 900;
+  text-align: center;
+  color: rgb(37,37,37);
+  font-size: 120px;
+}
+h2{
+  font-weight: 900;
+  text-align: left;
+  color: rgb(8,69,148);
+  font-size: 85px;
+  margin-top: 100px;
+}
+h3{
+  font-weight: 900;
+  text-align: left;
+  color: rgb(33,113,181);
+  font-size: 70px;
+}
+p{
+  color:rgb(37,37,37);
+  font-size: 50px;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.2;
+}
+
+ body{
+  font-family: 'Lato', sans-serif;
+    background-color: rgb(171,217,233);
+    margin-top: -50px;
+    margin-bottom: 50px;
+    margin-left: 600px;
+    margin-right: 600px;
+ }
+ .page{ 
+      
+   background-color: #f3fafa;   
+   margin: auto;
+   padding: 50px;
+   padding-top: 35px;
+}
+.vis-container{
+  width: 100%;
+}
+.description h2, h1{
+  margin-top:0px;
+}
+.description-right {
+  padding-left: 20px;
+}
+.description-left{
+  padding-right: 20px;
+}
+.pure-g{
+  margin-bottom: 25px;
+}
+.small-font{
+    font-size: 14px;
+}

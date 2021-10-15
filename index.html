@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Multiple Visualisations | An Example</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
+</head>
+<!--------------------------------------------------------------------->
+
+<body>
+
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Australia's Health Barometer: 2010-2020</h1>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group 1-->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="description description-left">
+          <h2>Introduction </h2>
+          <h3> The given dataset shows an overview of <span style="font-weight: 900;"> the health barometer </span> of Australians (2010-2020) </h3> 
+            <p> It shows the proportion of chronic longterm diseases by state and as a whole in Australia.
+            Laslty, it displays the most major chronic diseases termed as "CHAPTER IX Diseases of the circulatory system (I00-I99)",
+            particularly Ischaemic heart disease amongst Australians, 
+            with special emphasis on Victoria. 
+          </p>
+        </div>
+      <div class="pure-u-2-4">
+        <div class="description description-centre">
+          <h2>Section 1 : How many Australians are physically fit? </h2>
+          <p> The choropleth map shows the proportion of physically fit residents by each state. The data is collected
+            by ABS survey for 2019-2020. 
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-4-4">
+        <div id="vis2" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group stacked and heat map-->
+ <div class="pure-g">
+  <div class="pure-u-1-1">
+    <div class="description description-left">
+      <h2>Section 2 : So what's the health status by state?</h2>
+    <h3>Least to most healthy and No. of chronic conditions: 
+        Statewise(2017-2018) </h3>
+      <p>
+        While the stacked bar chart displays the proportion of excellent fitness to poor 
+        health state wise, the heat map provides further emphasis on no. of chronic 
+        conditions affecting each resident per state.Heat map shows proportion of people 
+        by number of chronic, conditions diagnosed per state in 2017-2018.
+      </p>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div id="vis1"  class="vis-container"></div>
+  </div>
+  <div class="pure-u-1-2">
+    <div id="vis4"  class="vis-container"></div>
+  </div>
+    
+  </div>
+  <!-- end pure grid group -->
+
+ <!-- pure grid group bar and Pie-->
+ <div class="pure-g">
+  <div class="pure-u-1-1">
+    <div class="description description-left">
+      <h2>Section 3 : Impact of chronic conditions on Australia and Victoria</h2>
+      <p> Bar chart shows Proportion of long term conditions in persons 15 and above (%)- 2017-2018
+        residents in Australia. The pie shows part to whole relationship of 
+        long term chronic conditions contributing to death rate in Victoria 2020.</p>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div id="vis3"  class="vis-container"></div>
+  </div>
+  <div class="pure-u-1-2">
+    <div id="vis5"  class="vis-container"></div>
+  </div>
+    
+</div>
+<!-- end pure grid group -->
+
+<!-- pure grid group area and line-->
+<div class="pure-g">
+  <div class="pure-u-1-1">
+    <div class="description description-left">
+      <h2>Section 4 : Diseases of the circulatory system(Chapter IX of ICD)</h2>
+      <p>First Visualisation shows deaths in <span style="color:#f77900"><b>Victoria</b></span> and <span style="color:#4575b4"><b>Australia</b></span> by 
+         diseases of the circulatory system. Second visualisation shows deaths by Ischaemic heart disease in Australia by<span style="color:#4575b4"><b> Males</b> </span>and <span style="color:#d73027"><b>Females</b> </span></p>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div id="vis6"  class="vis-container"></div>
+  </div>
+  <div class="pure-u-1-2">
+    <div id="vis7"  class="vis-container"></div>
+  </div>
+  <!-- end of pure -->  
+
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>This visualisation is created by <a href="https://github.com/RogueTrader7/Visulaisation2" target="_blank"> Sarah
+            Singh</a>.
+      </div>
+    </div>
+
+
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    var specVis1 = "./improvedstackedbar.json";
+    var specVis2 = "./Healthy.json";
+    var specVis3 = "./bar.json";
+    var specVis4 = "./mainheatmap.json";
+    var specVis5 = "./pie.json";
+    var specVis6 = "./areachart.json";
+    var specVis7 = "./concat.json";
+    
+    vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+  // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis6', specVis6, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as  result.view
+    }).catch(console.error);
+    vegaEmbed('#vis7', specVis7, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as  result.view
+    }).catch(console.error);
+      </script>
+    </body>
+
+    </html>

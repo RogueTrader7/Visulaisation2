@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width":"1000",
+  "height":"600",
+  "title": {"text": "Statewise proportion of chronic conditions(2017-18)", "fontSize":60, "color": "gray", "anchor": "start", "font":"Lato",
+  "dx":5},
+  "padding": {"right": 25},
+  "background": "#f3fafa",
+  "view": {"fill": "#EBF7F7"},
+  "data": {"url": "https://raw.githubusercontent.com/RogueTrader7/Visulaisation2/main/Heatmap.json"},
+  "params": [
+    {
+        "name": "Population_Above",
+        "value": 0,
+        "bind": {
+        "input": "range",
+        "min": 5,
+        "max": 61.2,
+        "step": 0.1,
+        "name": "Range of proportion: "
+      }
+    }
+],
+"transform": [
+ {"filter": "datum.count > 0"},
+ {"filter": "datum.count > 0"},
+ {"filter": "datum.count > Population_Above"}
+ ],
+  "mark": "rect",
+  "encoding": {
+    "y": {"field": "Num_chronic_conditions", "title": "No. of Chronic conditions", "type": "ordinal"},
+    "x": {"field": "state", "title": "Australian States", "type": "nominal"},
+
+    "color":{
+        "field":"count",
+        "type": "quantitative",
+        "scale": {
+            "domain":[5,50],
+        "range": [
+          "#ffffff",
+          "#fed976",
+          "#feb24c",
+          "#fd8d3c",
+          "#fc4e2a",
+          "#e31a1c",
+          "#bd0026"
+        ]
+  },
+
+  "legend":{
+    "labelLimit": 100,
+    "columns":1
+}
+
+},
+"tooltip": [
+    {"field": "Num_chronic_conditions", "title": "No. of chronic conditions diagnosed","type": "ordinal"},
+    {"field": "state", "type": "nominal"},
+    {"field": "count", "type": "quantitative", "format": ","}
+    ]
+},
+"config": {
+    "axis": {"grid": true, "tickBand": "extent"},
+    "axisX":{ "labelFont": "Lato", "labelFontSize":30, "titleFont": "Lato", "titleFontSize":40},
+    "axisY":{ "labelFont": "Lato", "labelFontSize":30, "titleFont": "Lato", "titleFontSize":40},
+    "legend": {
+    "labelFontSize":30,
+ 
+    "titleFontSize":30
+ 
+   }
+  }
+}

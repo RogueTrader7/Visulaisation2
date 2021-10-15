@@ -1,0 +1,70 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {"text":"Deaths due to Ischaemic heart disease(2011-2020)", "fontSize":"60", "font": "Lato","color": "gray", "anchor": "start"},
+    "background": "#f3fafa",
+    "view": {"fill": "#f3fafa"},
+    "padding": {"centre": 100},
+    "data": {
+        "url": "https://raw.githubusercontent.com/RogueTrader7/Visulaisation2/main/concat.csv"
+    },
+
+    "transform": [
+        {"filter": "datum.females > 0"},
+        
+        {
+         "calculate": "datum['females'] +' females died in 2011.'",
+         "as": "text_annotation"
+         }],
+
+        "hconcat": [
+            {
+            "width": "550",
+            "height": "400",
+            "mark": "area",
+            "encoding": {
+            "x": {
+                  "field": "Year",
+                    "type": "temporal"
+                  },
+            "y": {
+              "field": "males",
+              "type": "quantitative",
+              "axis": {"tickCount": 3, "grid": false} },
+
+              "tooltip":[{"field": "Year", "type": "temporal"},
+              {"field": "males", "type": "quantitative"}]
+              }
+            
+    },
+        {
+            "width": "550",
+            "height": "400",
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "temporal",
+
+                    "axis": {
+                        "title": "Year",
+                        "labelFontSize":10, "titleFont": "Lato", "titleFontSize":10
+                    }
+            },
+
+
+                "y": {
+                    "field": "females",
+                    "type": "quantitative",
+                    "labelFont": "Lato", "labelFontSize":10, "titleFont": "Lato", "titleFontSize":10
+
+                },
+
+                "tooltip":[{"field": "Year", "type": "temporal"},
+                {"field": "females", "type": "quantitative"}],
+                "color": { "value": "firebrick" }
+            }
+            }
+            ]
+    
+
+}
