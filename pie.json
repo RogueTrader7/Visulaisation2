@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 1200,
-  "height": 700,
+  "width": 400,
+  "height": 300,
   "padding": {"right": 10},
-  "title": {"text": "Chronic conditions % in Victoria(2020)","fontSize":60,"color": "gray", "anchor": "start", "font":"Lato"},
+  "title": {"text": "Chronic conditions % in Victoria(2020)","fontSize":18,"color": "gray", "anchor": "start", "font":"Lato"},
   "autosize": "fit",
   "background": "#f3fafa",
   "view": {"fill": "#f3fafa"},
@@ -87,7 +87,7 @@
               "range": ["#a50026", "#d73027", "#f46d43", "#fdae61", "#fee090", "#e0f3f8", "#abd9e9", "#74add1", "#4575b4", "#313695"]
           },
           "legend":{
-              "labelLimit": 800,
+              "labelLimit": 400,
               "columns":1
           }
           },
@@ -103,13 +103,13 @@
 
         "config": {
             "view": {"stroke": null},
-            "axisX":{ "labelFont": "Lato", "labelFontSize":30, "titleFont": "Lato", "titleFontSize":40},
-            "axisY":{ "labelFont": "Lato", "labelFontSize":30, "titleFont": "Lato", "titleFontSize":40},
+            "axisX":{ "labelFont": "Lato", "labelFontSize":10, "titleFont": "Lato", "titleFontSize":10},
+            "axisY":{ "labelFont": "Lato", "labelFontSize":10, "titleFont": "Lato", "titleFontSize":10},
             "legend": {
-              "labelFontSize":30,
+              "labelFontSize":10,
               "titleFont": "Lato", 
              
-              "titleFontSize":35
+              "titleFontSize":10
     
              
                }
