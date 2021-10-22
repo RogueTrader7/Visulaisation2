@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {"text":"Deaths due to Ischaemic heart disease(2011-2020)", "fontSize":"60", "font": "Lato","color": "gray", "anchor": "start"},
+    "title": {"text":"Deaths due to Ischaemic heart disease(2011-2020)", "fontSize":"18", "font": "Lato","color": "gray", "anchor": "start"},
     "background": "#f3fafa",
     "view": {"fill": "#f3fafa"},
     "padding": {"centre": 100},
@@ -18,8 +18,8 @@
 
         "hconcat": [
             {
-            "width": "550",
-            "height": "400",
+            "width": "350",
+            "height": "100",
             "mark": "area",
             "encoding": {
             "x": {
@@ -37,8 +37,8 @@
             
     },
         {
-            "width": "550",
-            "height": "400",
+            "width": "350",
+            "height": "100",
             "mark": "area",
             "encoding": {
                 "x": {
