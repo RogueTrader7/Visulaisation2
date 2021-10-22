@@ -1,8 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {"text": "State wise health status(2017-18)", "fontSize":60, "color": "gray", "anchor": "start", "font":"Lato",
+    "title": {"text": "State wise health status(2017-18)", "fontSize":20, "color": "gray", "anchor": "start", "font":"Lato",
     "dx":5},
     "padding": {"right": 25},
+    "width":250,
+    "height":200,
     "data": {
       "url": "https://raw.githubusercontent.com/RogueTrader7/Homework10/main/normalisedtree.csv"
     },
@@ -19,37 +21,7 @@
             "name": "Range of proportion: "
             
           }
-        },
- {
- "name": "State_selection",
- "bind": {
- "input": "select",
- "options": [
- null,
- "NSW",
- "Vic",
- "Qld",
- "SA",
- "WA",
- "Tas",
- "NT",
- "ACT"
- ],
- "labels":[
- "Show All",
- "NSW",
- "Vic",
- "Qld",
- "SA",
- "WA",
- "Tas",
- "NT",
- "ACT"
- ],
- 
- "name": "State Selection: "
- }
- }
+        }
  ],
  "transform": [
      {"filter": "datum.people > 0"},
@@ -137,7 +109,7 @@
    }
    
  },
-   "mark": {"type": "text", "align": "center", "dx": 3, "size":"30"},
+   "mark": {"type": "text", "align": "center", "dx": 3, "size":"15"},
  "encoding": {"text": {"field": "text_annotation"}
 
        
@@ -145,13 +117,13 @@
   }
 ],
 "config": {
-    "axisX":{ "labelFont": "Lato", "labelFontSize":30, "titleFont": "Lato", "titleFontSize":40},
-    "axisY":{ "labelFont": "Lato", "labelFontSize":30, "titleFont": "Lato", "titleFontSize":40},
+    "axisX":{ "labelFont": "Lato", "labelFontSize":15, "titleFont": "Lato", "titleFontSize":20},
+    "axisY":{ "labelFont": "Lato", "labelFontSize":15, "titleFont": "Lato", "titleFontSize":20},
     "legend": {
 
-      "labelFontSize":30,
+      "labelFontSize":10,
      
-      "titleFontSize":30
+      "titleFontSize":15
      
        }
      
