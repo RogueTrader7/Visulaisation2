@@ -1,11 +1,11 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 2000,
-    "height": 700,
+    "width": 400,
+    "height": 200,
     "background": "#f3fafa",
     "view": {"fill": "#EBF7F7"},
     "align": "centre",
-    "title": {"text": "Fitness by State(2019)", "anchor":"start","font": "Lato","color": "gray",  "fontSize": 60},
+    "title": {"text": "Fitness by State(2019)", "anchor":"start","font": "Lato","color": "gray",  "fontSize": 20},
     "config": {"legend": {"titleFont": "Lato"}},
     "projection":{"type": "equirectangular"},
     "data":{
