@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width":"1000",
-  "height":"600",
-  "title": {"text": "Statewise proportion of chronic conditions(2017-18)", "fontSize":60, "color": "gray", "anchor": "start", "font":"Lato",
+  "width":"250",
+  "height":"150",
+  "title": {"text": "Statewise proportion of chronic conditions(2017-18)", "fontSize":18, "color": "gray", "anchor": "start", "font":"Lato",
   "dx":5},
   "padding": {"right": 25},
   "background": "#f3fafa",
@@ -61,12 +61,12 @@
 },
 "config": {
     "axis": {"grid": true, "tickBand": "extent"},
-    "axisX":{ "labelFont": "Lato", "labelFontSize":30, "titleFont": "Lato", "titleFontSize":40},
-    "axisY":{ "labelFont": "Lato", "labelFontSize":30, "titleFont": "Lato", "titleFontSize":40},
+    "axisX":{ "labelFont": "Lato", "labelFontSize":10, "titleFont": "Lato", "titleFontSize":20},
+    "axisY":{ "labelFont": "Lato", "labelFontSize":10, "titleFont": "Lato", "titleFontSize":20},
     "legend": {
-    "labelFontSize":30,
+    "labelFontSize":20,
  
-    "titleFontSize":30
+    "titleFontSize":20
  
    }
   }
