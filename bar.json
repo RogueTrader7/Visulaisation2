@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 1400,
-  "height": 800,
+  "width": 350,
+  "height": 200,
   "padding": {"right": 10, "bottom": 50},
-  "title": {"text": "% Proportion of chronic conditions(2017-18)","fontSize":60,"color": "gray", "anchor": "start", "font":"Lato"},
+  "title": {"text": "% Proportion of chronic conditions(2017-18)","fontSize":18,"color": "gray", "anchor": "start", "font":"Lato"},
   "autosize": "fit",
   "background": "#f3fafa",
   "view": {"fill": "#f3fafa"},
@@ -110,18 +110,18 @@
   
   },
 
-    "mark": {"type": "text", "align": "left", "dx": 3, "size":"40", "font":"Lato"},
+    "mark": {"type": "text", "align": "left", "dx": 3, "size":"8", "font":"Lato"},
     "encoding": {"text": {"field": "text_annotation"}}  
   }],
   "config": {
     "view": {"stroke": null},
-    "axisX":{ "labelFont": "Lato", "labelFontSize":40, "titleFont": "Lato", "titleFontSize":40},
-    "axisY":{ "labelFont": "Lato", "labelFontSize":40, "titleFont": "Lato", "titleFontSize":0,   "labelLimit": 600,
+    "axisX":{ "labelFont": "Lato", "labelFontSize":10, "titleFont": "Lato", "titleFontSize":10},
+    "axisY":{ "labelFont": "Lato", "labelFontSize":10, "titleFont": "Lato", "titleFontSize":0,   "labelLimit": 500,
     "columns":1},
     "legend": {
-      "labelFontSize":30,
+      "labelFontSize":10,
      
-      "titleFontSize":30
+      "titleFontSize":10
      
        }
 } 
